@@ -107,6 +107,10 @@ nmap <leader>w. :vertical resize +10<CR>
 inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
+" Use Shift with f & b to page up and down.
+nmap <S-f> <C-f>
+nmap <S-b> <C-b>
+
 
 " Command-T
 " --------------------
@@ -116,6 +120,10 @@ let g:CommandTAcceptSelectionSplitMap = '<C-h>'
 
 " Show 15 results at a time.
 let g:CommandTMaxHeight = 15
+
+" Use Tab to select next item in menu.
+let g:CommandTToggleFocusMap = ''
+let g:CommandTSelectNextMap = ['<Tab>', '<C-n>', '<C-j>', '<Down>']
 
 
 " NERDTree
@@ -145,9 +153,14 @@ let g:neocomplete#enable_at_startup = 1
 imap <leader>e <Plug>(neosnippet_expand)
 smap <leader>e <Plug>(neosnippet_expand)
 
-" Use Tab to jump through snippet.
-imap <expr><Tab> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Tab>"
-smap <expr><Tab> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Tab>"
+" Use Tab to select next item in menu
+" or jump to next spot in a snippet.
+imap <expr><Tab> neosnippet#jumpable() ?
+    \ "\<Plug>(neosnippet_jump)" :
+    \ pumvisible() ? "\<C-n>" : "\<Tab>"
+
+smap <expr><Tab> neosnippet#jumpable() ?
+    \ "\<Plug>(neosnippet_jump)" : "\<Tab>"
 
 
 " Emmet
