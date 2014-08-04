@@ -62,7 +62,7 @@ let mapleader = ","         " Set leader key.
 " --------------------
 
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-ocean
 
 set number              " Show line numbers
 syntax on               " Turn on syntax highlighting
