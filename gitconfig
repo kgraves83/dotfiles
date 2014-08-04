@@ -1,0 +1,15 @@
+[user]
+	name = Keith Graves
+	email = kgraves@pcfruit.com
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+[core]
+	excludesfile = /Users/kgraves/.gitignore
+[color]
+	ui = true
+[push]
+	default = matching
