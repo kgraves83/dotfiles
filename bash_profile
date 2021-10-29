@@ -1,6 +1,7 @@
 # Set Path
 export PATH=~/bin:vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:$PATH
 
+# This is an edit.
 
 # Colors
 txtblk='\e[0;30m' # Black - Regular
